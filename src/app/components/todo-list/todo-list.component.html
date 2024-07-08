@@ -1,0 +1,12 @@
+<div class="mt-4 ">
+    <ul class="list-group ">
+        <li class="list-group-item d-flex justify-content-between " *ngFor="let todo of todo">
+            {{todo.todoItem}}
+            <div>
+                <button class="btn btn-success btn-sm m-2">Edit</button>
+                <button class="btn btn-danger btn-sm m-2" (click)="onDelete(todo.id)">Delete</button>
+
+            </div>
+        </li>
+    </ul>
+</div>

@@ -1,0 +1,30 @@
+<h3 class="mt-4"></h3>
+<div class="table-responsive">
+    <table class="table table-bordered">
+        <thead class="alert alert-warning">
+            <tr>
+                <th>Sr.No</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th></th>
+            </tr>
+        </thead>
+        <tbody class="alert alert-danger">
+            <tr *ngFor="let std of stddata;index as i">
+                <td>{{i+1}}</td>
+                <td>{{std.fname}}</td>
+                <td>{{std.lname}}</td>
+                <td>{{std.email}}</td>
+                <td>{{std.contact}}</td>
+                <td class="d-flex justify-content-between">
+                    <button class="btn btn-success">Edit</button>
+                    <button class="btn btn-danger ml-2" (click)="onDelete(std.stdId)">Delete</button>
+
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

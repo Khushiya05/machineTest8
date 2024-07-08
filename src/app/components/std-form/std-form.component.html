@@ -1,0 +1,33 @@
+<form #signUpForm="ngForm" (submit)="onAddstd()" class="alert alert-info">
+    <div class="form-group">
+        <label for="fname">First Name:<sup class="text-danger">*</sup></label>
+        <input type="text" id="fname" class="form-control" name="fname" ngModel #fname="ngModel" required pattern="[a-zA-Z]+">
+        <p class="alert alert-danger" *ngIf="fname.dirty && fname.hasError('pattern')">
+            First Name shouldnot include number and Special Character
+        </p>
+    </div>
+    <div class="form-group">
+        <label for="lname">lname Name:<sup class="text-danger">*</sup></label>
+        <input type="text" id="lname" class="form-control" name="lname" ngModel #lname="ngModel" required pattern="[a-zA-Z]+">
+        <p class="alert alert-danger" *ngIf="lname.dirty && lname.hasError('pattern')">
+            First Name shouldnot include number and Special Character
+        </p>
+    </div>
+    <div class="form-group">
+        <label for="email">Email:<sup class="text-danger">*</sup></label>
+        <input type="text" id="email" class="form-control" name="email" ngModel #email="ngModel" required pattern="[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}">
+        <p class="alert alert-danger" *ngIf="email.dirty && email.hasError('pattern')">
+            Enter valid Email Adddress
+        </p>
+    </div>
+    <div class="form-group">
+        <label for="contact">Contact:<sup class="text-danger">*</sup></label>
+        <input type="text" id="contact" class="form-control" name="contact" ngModel #contact="ngModel" required pattern="[0-9]+" maxlength="10">
+        <p class="alert alert-danger" *ngIf="contact.dirty && contact.hasError('pattern')">
+            include only numbers
+        </p>
+    </div>
+    <div class="text-right">
+        <button class="btn btn-primary">Add Student</button>
+    </div>
+</form>
