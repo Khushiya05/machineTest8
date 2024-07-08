@@ -5,12 +5,18 @@
         <p class="alert alert-danger" *ngIf="fname.dirty && fname.hasError('pattern')">
             First Name shouldnot include number and Special Character
         </p>
+        <p class="alert alert-danger" *ngIf="fname.touched && fname.hasError('required')">
+            first name is required field
+        </p>
     </div>
     <div class="form-group">
         <label for="lname">lname Name:<sup class="text-danger">*</sup></label>
         <input type="text" id="lname" class="form-control" name="lname" ngModel #lname="ngModel" required pattern="[a-zA-Z]+">
         <p class="alert alert-danger" *ngIf="lname.dirty && lname.hasError('pattern')">
             First Name shouldnot include number and Special Character
+        </p>
+        <p class="alert alert-danger" *ngIf="lname.touched && lname.hasError('required')">
+            First Name is required field
         </p>
     </div>
     <div class="form-group">
@@ -19,12 +25,18 @@
         <p class="alert alert-danger" *ngIf="email.dirty && email.hasError('pattern')">
             Enter valid Email Adddress
         </p>
+        <p class="alert alert-danger" *ngIf="email.touched && email.hasError('required')">
+            Email Adddress is required
+        </p>
     </div>
     <div class="form-group">
         <label for="contact">Contact:<sup class="text-danger">*</sup></label>
         <input type="text" id="contact" class="form-control" name="contact" ngModel #contact="ngModel" required pattern="[0-9]+" maxlength="10">
         <p class="alert alert-danger" *ngIf="contact.dirty && contact.hasError('pattern')">
             include only numbers
+        </p>
+        <p class="alert alert-danger" *ngIf="contact.touched && contact.hasError('required')">
+            Contact is required field
         </p>
     </div>
     <div class="text-right">
